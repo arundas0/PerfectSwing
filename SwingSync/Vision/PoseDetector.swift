@@ -7,6 +7,7 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
     @Published var landmarks: [[NormalizedLandmark]] = []
     
     private var poseLandmarker: PoseLandmarker?
+    private var debugIsProcessing = false
     
     override init() {
         super.init()
@@ -51,42 +52,54 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
     // CameraServiceDelegate conformance
     private var frameCount = 0
     func cameraService(_ service: CameraService, didOutput sampleBuffer: CMSampleBuffer) {
-        frameCount += 1
-        DispatchQueue.main.async {
-            self.objectWillChange.send()
-            self.framesReceived += 1
+        autoreleasepool {
+            frameCount += 1
+            // Always update UI counters for frames received
+            DispatchQueue.main.async {
+                self.framesReceived += 1
+                print("🧪 UI framesReceived now \(self.framesReceived)")
+            }
+            if frameCount % 60 == 1 {
+                print("📷 Received frame #\(frameCount)")
+            }
+            // Feed ring buffer / any consumers regardless
+            onFrame?(sampleBuffer)
+            // Back-pressure only for detection
+            if debugIsProcessing {
+                if frameCount % 60 == 1 { print("🧪 Skipping detect; processing in flight") }
+                return
+            }
+            debugIsProcessing = true
+            print("🧪 Will call detectAsync for frame #\(frameCount)")
+            detect(sampleBuffer: sampleBuffer)
         }
-        if frameCount % 60 == 1 {
-            print("📷 Received frame #\(frameCount)")
-        }
-        onFrame?(sampleBuffer)
-        detect(sampleBuffer: sampleBuffer)
     }
     
     private func detect(sampleBuffer: CMSampleBuffer) {
         guard let landmarker = poseLandmarker else {
             DispatchQueue.main.async {
-                self.objectWillChange.send()
                 self.lastError = "Landmarker not initialized"
             }
+            self.debugIsProcessing = false
             return
         }
         
         DispatchQueue.main.async {
-            self.objectWillChange.send()
             self.detectionsAttempted += 1
         }
         let timestampInMilliseconds = Int(CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer)) * 1000)
+        print("🧪 detectAsync in ts=\(timestampInMilliseconds)")
         
         do {
             let image = try MPImage(sampleBuffer: sampleBuffer)
             try landmarker.detectAsync(image: image, timestampInMilliseconds: timestampInMilliseconds)
+            print("🧪 detectAsync submitted ts=\(timestampInMilliseconds)")
         } catch {
             print("❌ Detection failed: \(error)")
             DispatchQueue.main.async {
-                self.objectWillChange.send()
                 self.lastError = "Detection error: \(error.localizedDescription)"
             }
+            self.debugIsProcessing = false
         }
     }
     
@@ -96,8 +109,10 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
     
     // PoseLandmarkerLiveStreamDelegate conformance
     func poseLandmarker(_ poseLandmarker: PoseLandmarker, didFinishDetection result: PoseLandmarkerResult?, timestampInMilliseconds: Int, error: Error?) {
+        print("🧪 didFinishDetection ts=\(timestampInMilliseconds) error=\(String(describing: error))")
+        self.debugIsProcessing = false
+        
         DispatchQueue.main.async {
-            self.objectWillChange.send()
             self.resultsReceived += 1
         }
         
@@ -105,12 +120,10 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
             if let error = error {
                 print("Pose detection error: \(error)")
                 DispatchQueue.main.async {
-                    self.objectWillChange.send()
                     self.lastError = "Result error: \(error.localizedDescription)"
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.objectWillChange.send()
                     self.lastError = "No pose detected in frame"
                 }
             }
@@ -118,7 +131,6 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
         }
         
         DispatchQueue.main.async {
-            self.objectWillChange.send()
             self.lastError = "✓ OK"
         }
         
@@ -128,7 +140,6 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
 
         // Update UI and trigger logic on main thread
         DispatchQueue.main.async {
-            self.objectWillChange.send()
             self.landmarks = [filtered]
             self.onLandmarks?(filtered)
         }
@@ -150,3 +161,4 @@ class PoseDetector: NSObject, ObservableObject, CameraServiceDelegate, PoseLandm
         }
     }
 }
+

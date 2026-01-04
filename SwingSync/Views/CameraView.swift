@@ -122,8 +122,8 @@ struct CameraView: View {
         }
         .onAppear {
             cameraService.delegate = poseDetector
-            poseDetector.onFrame = { buffer in
-                ringBuffer.append(buffer)
+            poseDetector.onFrame = { _ in
+                // Disabled to test sample buffer retention / pool exhaustion
             }
             poseDetector.onLandmarks = { landmarks in
                 swingLogic.process(landmarks: landmarks)

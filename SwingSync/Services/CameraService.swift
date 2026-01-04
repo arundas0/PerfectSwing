@@ -17,7 +17,8 @@ class CameraService: NSObject, ObservableObject {
     let session = AVCaptureSession()
     private let videoOutput = AVCaptureVideoDataOutput()
     private let sessionQueue = DispatchQueue(label: "com.swingsync.cameraQueue")
-    private let videoOutputQueue = DispatchQueue(label: "com.swingsync.videoOutputQueue")
+    private let videoOutputQueue = DispatchQueue(label: "com.swingsync.videoOutputQueue", qos: .userInteractive)
+    private var debugFrameCount = 0
     
     @Published var isAuthorized = false
     @Published var isRunning = false
@@ -94,7 +95,7 @@ class CameraService: NSObject, ObservableObject {
     
     private func configureHighFrameRate(for device: AVCaptureDevice) {
         // Prioritize 120, then 60, then 30
-        let targetFPS: Double = 240 // Target highest possible
+        //let targetFPS: Double = 240 // Target highest possible
         var bestFormat: AVCaptureDevice.Format?
         var bestRange: AVFrameRateRange?
         
@@ -152,6 +153,15 @@ class CameraService: NSObject, ObservableObject {
 
 extension CameraService: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        delegate?.cameraService(self, didOutput: sampleBuffer)
+        autoreleasepool {
+            debugFrameCount += 1
+            if debugFrameCount <= 10 {
+                print("🧪 CameraService.captureOutput start #\(debugFrameCount)")
+            }
+            delegate?.cameraService(self, didOutput: sampleBuffer)
+            if debugFrameCount <= 10 {
+                print("🧪 CameraService.captureOutput end #\(debugFrameCount)")
+            }
+        }
     }
 }
