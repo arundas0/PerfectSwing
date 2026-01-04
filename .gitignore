@@ -16,5 +16,7 @@ data/
 models/
 # CocoaPods
 Pods/
+
+# Xcode user-specific state
+*.xcuserstate
 **/xcuserdata/
-**/*.xcuserstate
