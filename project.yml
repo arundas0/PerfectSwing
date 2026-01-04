@@ -1,0 +1,16 @@
+name: SwingSync
+options:
+  bundleIdPrefix: com.example
+targets:
+  SwingSync:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: [SwingSync]
+    info:
+      path: SwingSync/Info.plist
+      properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        NSCameraUsageDescription: "We need camera access to analyze your golf swing."
