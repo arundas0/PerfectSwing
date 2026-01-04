@@ -14,3 +14,4 @@ targets:
         CFBundleVersion: "1"
         UILaunchScreen: {}
         NSCameraUsageDescription: "We need camera access to analyze your golf swing."
+        NSPhotoLibraryAddUsageDescription: "We save your swing videos to your Photo Library for review and sharing."

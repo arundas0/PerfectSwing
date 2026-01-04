@@ -51,11 +51,11 @@ struct SkeletonOverlay: View {
     
     private func point(for landmark: NormalizedLandmark) -> CGPoint {
         // MediaPipe coordinates: x, y in [0, 1].
-        // Camera is front-facing and mirrored.
-        // We typically need to invert X to match the mirrored preview.
+        // Video frames are already mirrored by CameraService, so landmarks
+        // are in the correct mirrored space - no additional X inversion needed.
         
         return CGPoint(
-            x: CGFloat(1.0 - landmark.x) * geometry.size.width,
+            x: CGFloat(landmark.x) * geometry.size.width,
             y: CGFloat(landmark.y) * geometry.size.height
         )
     }

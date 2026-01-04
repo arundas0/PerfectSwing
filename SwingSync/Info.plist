@@ -20,16 +20,8 @@
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
 	<string>We need camera access to analyze your golf swing.</string>
-	<key>UIFileSharingEnabled</key>
-	<true/>
-	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<true/>
-	<key>UIRequiresFullScreen</key>
-	<true/>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We save your swing videos to your Photo Library for review and sharing.</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>

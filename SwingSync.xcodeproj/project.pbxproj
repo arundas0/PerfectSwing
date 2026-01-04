@@ -13,57 +13,51 @@
 		4DDB71DD94F988901BE8B23A /* SkeletonOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */; };
 		529F17F6DCAD5F0AF0F89175 /* pose_landmarker.task in Resources */ = {isa = PBXBuildFile; fileRef = BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */; };
 		5F3EF3ABD22C9CB66793C126 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC631867AED78A9A59A1AA /* CameraService.swift */; };
-		B1D425F4520E0395B37DBB0F /* Pods_SwingSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D53D8F02623DEF564EF4D2 /* Pods_SwingSync.framework */; };
-		F4FAA07F2F088CED00505AAE /* SwingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAA07E2F088CED00505AAE /* SwingLogic.swift */; };
-		F4FAA0802F088CED00505AAE /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAA07D2F088CED00505AAE /* RingBuffer.swift */; };
-		F4FAA0822F08E96600505AAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FAA0812F08E96600505AAE /* Assets.xcassets */; };
-		F4FAA0862F08EA4C00505AAE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAA0852F08EA4C00505AAE /* SplashView.swift */; };
+		62F7E663A6575EA398E4288A /* SwingSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5B745B4F1CE045001E8CD9 /* SwingSavedView.swift */; };
+		8E8565BF16EFD5DFEE6EC5D5 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64024919714AD918897DE0 /* RingBuffer.swift */; };
+		8EF0A862E9493C7806F17522 /* Pods_SwingSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF18374E06D96FEFFFDB8F45 /* Pods_SwingSync.framework */; };
+		93AE831C10E1E42EC09C2BEF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046508B56856F8F093EA4AB3 /* SplashView.swift */; };
+		B22ED0D2B8038727174DBA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DD74347A3F363367E1D7C7 /* Assets.xcassets */; };
+		BED0204DF91BFA3D1B97D6A0 /* SwingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD2E77C400E25568173A27 /* SwingLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046508B56856F8F093EA4AB3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		08CC631867AED78A9A59A1AA /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		0F5B745B4F1CE045001E8CD9 /* SwingSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingSavedView.swift; sourceTree = "<group>"; };
+		12DD74347A3F363367E1D7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15AD2E77C400E25568173A27 /* SwingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingLogic.swift; sourceTree = "<group>"; };
 		1B4AD0FE5F39F71813C48093 /* SwingSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDA3995F9F7E041A8834DA4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		6087D786BE9A1DC4F729E140 /* Pods-SwingSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.debug.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.debug.xcconfig"; sourceTree = "<group>"; };
 		61547B50645602AC5C187FF0 /* PoseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetector.swift; sourceTree = "<group>"; };
+		70096078A478D8CE57CDD615 /* Pods-SwingSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.release.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.release.xcconfig"; sourceTree = "<group>"; };
 		77C24C462FDB073DCBB1D1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonOverlay.swift; sourceTree = "<group>"; };
-		925E7D8FF1B4E06827885A99 /* Pods-SwingSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.release.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.release.xcconfig"; sourceTree = "<group>"; };
+		AE64024919714AD918897DE0 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 		BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */ = {isa = PBXFileReference; lastKnownFileType = file; path = pose_landmarker.task; sourceTree = "<group>"; };
-		F2D53D8F02623DEF564EF4D2 /* Pods_SwingSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwingSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4FAA07D2F088CED00505AAE /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		F4FAA07E2F088CED00505AAE /* SwingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingLogic.swift; sourceTree = "<group>"; };
-		F4FAA0812F08E96600505AAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F4FAA0852F08EA4C00505AAE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		BF18374E06D96FEFFFDB8F45 /* Pods_SwingSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwingSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingSyncApp.swift; sourceTree = "<group>"; };
-		FED51AAB13A3A98541F99F5D /* Pods-SwingSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.debug.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8D066FDF53A3F86C0455AA4A /* Frameworks */ = {
+		F2DD4500593F3D32C3FA9993 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D425F4520E0395B37DBB0F /* Pods_SwingSync.framework in Frameworks */,
+				8EF0A862E9493C7806F17522 /* Pods_SwingSync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02115F732830BF97F92D5809 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F2D53D8F02623DEF564EF4D2 /* Pods_SwingSync.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1AB48A16E75FD667ABC6C1D0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F4FAA07D2F088CED00505AAE /* RingBuffer.swift */,
-				F4FAA07E2F088CED00505AAE /* SwingLogic.swift */,
 				08CC631867AED78A9A59A1AA /* CameraService.swift */,
+				AE64024919714AD918897DE0 /* RingBuffer.swift */,
+				15AD2E77C400E25568173A27 /* SwingLogic.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -87,19 +81,29 @@
 		45FA64AF151134EB2BE6B695 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F4FAA0852F08EA4C00505AAE /* SplashView.swift */,
 				5BDA3995F9F7E041A8834DA4 /* CameraView.swift */,
 				89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */,
+				046508B56856F8F093EA4AB3 /* SplashView.swift */,
+				0F5B745B4F1CE045001E8CD9 /* SwingSavedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		592B55FDF1E5923693DE9F71 /* Pods */ = {
+		795DD278BFC8CABF5924E89B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FED51AAB13A3A98541F99F5D /* Pods-SwingSync.debug.xcconfig */,
-				925E7D8FF1B4E06827885A99 /* Pods-SwingSync.release.xcconfig */,
+				BF18374E06D96FEFFFDB8F45 /* Pods_SwingSync.framework */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8FC3C1A096460FA4473B246 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6087D786BE9A1DC4F729E140 /* Pods-SwingSync.debug.xcconfig */,
+				70096078A478D8CE57CDD615 /* Pods-SwingSync.release.xcconfig */,
+			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -108,15 +112,15 @@
 			children = (
 				E6F0536C354F9F720E5619FF /* SwingSync */,
 				2D6B2EE7A5D08DFD8396FB1C /* Products */,
-				592B55FDF1E5923693DE9F71 /* Pods */,
-				02115F732830BF97F92D5809 /* Frameworks */,
+				D8FC3C1A096460FA4473B246 /* Pods */,
+				795DD278BFC8CABF5924E89B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E6F0536C354F9F720E5619FF /* SwingSync */ = {
 			isa = PBXGroup;
 			children = (
-				F4FAA0812F08E96600505AAE /* Assets.xcassets */,
+				12DD74347A3F363367E1D7C7 /* Assets.xcassets */,
 				77C24C462FDB073DCBB1D1C0 /* Info.plist */,
 				BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */,
 				F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */,
@@ -134,10 +138,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 055FB4CC2F8EB48705CED4FA /* Build configuration list for PBXNativeTarget "SwingSync" */;
 			buildPhases = (
-				B68C78E3850205185F58DC82 /* [CP] Check Pods Manifest.lock */,
+				E8624A5CFDB16A763A0AF916 /* [CP] Check Pods Manifest.lock */,
 				BB1F22D152DE69F2D62FA11C /* Sources */,
 				635BD00AA5B670B569D53AF9 /* Resources */,
-				8D066FDF53A3F86C0455AA4A /* Frameworks */,
+				F2DD4500593F3D32C3FA9993 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 1430;
 			};
 			buildConfigurationList = A314A8E9CB80FF108515D1B8 /* Build configuration list for PBXProject "SwingSync" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -181,7 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FAA0822F08E96600505AAE /* Assets.xcassets in Resources */,
+				B22ED0D2B8038727174DBA15 /* Assets.xcassets in Resources */,
 				529F17F6DCAD5F0AF0F89175 /* pose_landmarker.task in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,7 +193,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B68C78E3850205185F58DC82 /* [CP] Check Pods Manifest.lock */ = {
+		E8624A5CFDB16A763A0AF916 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,12 +223,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F3EF3ABD22C9CB66793C126 /* CameraService.swift in Sources */,
-				F4FAA0862F08EA4C00505AAE /* SplashView.swift in Sources */,
 				04A2D2DD506A157EE48D993A /* CameraView.swift in Sources */,
-				F4FAA07F2F088CED00505AAE /* SwingLogic.swift in Sources */,
-				F4FAA0802F088CED00505AAE /* RingBuffer.swift in Sources */,
 				48DFD99634A3CE1F8D80F52F /* PoseDetector.swift in Sources */,
+				8E8565BF16EFD5DFEE6EC5D5 /* RingBuffer.swift in Sources */,
 				4DDB71DD94F988901BE8B23A /* SkeletonOverlay.swift in Sources */,
+				93AE831C10E1E42EC09C2BEF /* SplashView.swift in Sources */,
+				BED0204DF91BFA3D1B97D6A0 /* SwingLogic.swift in Sources */,
+				62F7E663A6575EA398E4288A /* SwingSavedView.swift in Sources */,
 				059670136824A20371923001 /* SwingSyncApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,10 +239,11 @@
 /* Begin XCBuildConfiguration section */
 		34C74792E5289DA51767E00E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 925E7D8FF1B4E06827885A99 /* Pods-SwingSync.release.xcconfig */;
+			baseConfigurationReference = 70096078A478D8CE57CDD615 /* Pods-SwingSync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 264GGXBU5X;
 				INFOPLIST_FILE = SwingSync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -252,10 +258,11 @@
 		};
 		C483BCBC354B6EA56901750F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FED51AAB13A3A98541F99F5D /* Pods-SwingSync.debug.xcconfig */;
+			baseConfigurationReference = 6087D786BE9A1DC4F729E140 /* Pods-SwingSync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 264GGXBU5X;
 				INFOPLIST_FILE = SwingSync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,10 +310,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 264GGXBU5X;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -319,7 +324,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -361,10 +365,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 264GGXBU5X;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -384,7 +386,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;

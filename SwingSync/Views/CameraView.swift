@@ -1,6 +1,7 @@
 import SwiftUI
 import AVFoundation
 import Combine
+import Photos
 
 struct CameraView: View {
     @StateObject private var cameraService = CameraService()
@@ -113,23 +114,23 @@ struct CameraView: View {
                     .cornerRadius(8)
             }
         }
-        .sheet(isPresented: $showingSaveSheet) {
-            if let url = savedVideoURL {
-                Text("Swing Saved: \(url.lastPathComponent)")
-            } else {
-                Text("Saving...")
+        .fullScreenCover(isPresented: $showingSaveSheet) {
+            SwingSavedView(videoURL: savedVideoURL) {
+                showingSaveSheet = false
             }
         }
         .onAppear {
             cameraService.delegate = poseDetector
-            poseDetector.onFrame = { _ in
-                // Disabled to test sample buffer retention / pool exhaustion
+            poseDetector.onFrame = { [self] sampleBuffer in
+                // Feed frames to ring buffer for video capture
+                ringBuffer.append(sampleBuffer)
             }
             poseDetector.onLandmarks = { landmarks in
                 swingLogic.process(landmarks: landmarks)
             }
             
             swingLogic.onVisualSwingDetected = {
+                print("🎬 SWING DETECTED - Triggering save...")
                 saveSwing()
             }
             
@@ -145,8 +146,13 @@ struct CameraView: View {
     }
     
     private func saveSwing() {
-        let fileName = "swing_\(Date().timeIntervalSince1970).mp4"
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
+        // Create user-friendly filename with date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-dd-yyyy_HH-mm-ss"
+        let dateString = dateFormatter.string(from: Date())
+        let fileName = "GolfSwing_\(dateString).mp4"
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+        print("💾 Attempting to save swing to: \(url)")
         
         ringBuffer.save(to: url) { result in
             DispatchQueue.main.async {
@@ -154,9 +160,9 @@ struct CameraView: View {
                 case .success(let savedUrl):
                     self.savedVideoURL = savedUrl
                     self.showingSaveSheet = true
-                    print("Saved swing to: \(savedUrl)")
+                    print("✅ Saved swing to: \(savedUrl)")
                 case .failure(let error):
-                    print("Failed to save swing: \(error)")
+                    print("❌ Failed to save swing: \(error)")
                 }
             }
         }
@@ -170,16 +176,22 @@ struct CameraPreview: UIViewRepresentable {
         let view = VideoPreviewView()
         view.videoPreviewLayer.session = session
         view.videoPreviewLayer.videoGravity = .resizeAspectFill
-        if let connection = view.videoPreviewLayer.connection {
-             if connection.isVideoRotationAngleSupported(90) {
-                 connection.videoRotationAngle = 90
-             }
-        }
         return view
     }
     
     func updateUIView(_ uiView: VideoPreviewView, context: Context) {
-        // Update logic if needed
+        // Apply rotation when connection becomes available
+        if let connection = uiView.videoPreviewLayer.connection {
+            if #available(iOS 17.0, *) {
+                if connection.isVideoRotationAngleSupported(90) {
+                    connection.videoRotationAngle = 90
+                }
+            } else {
+                if connection.isVideoOrientationSupported {
+                    connection.videoOrientation = .portrait
+                }
+            }
+        }
     }
 }
 
