@@ -10,7 +10,6 @@
 		04A2D2DD506A157EE48D993A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA3995F9F7E041A8834DA4 /* CameraView.swift */; };
 		059670136824A20371923001 /* SwingSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */; };
 		29917183EF6E090C1698A4B7 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA171DB74FAF09495FA4A90 /* FeedbackCardView.swift */; };
-		3C4C10B02F25739A09F2643A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2775E1511529BD4050F0534 /* README.md */; };
 		48DFD99634A3CE1F8D80F52F /* PoseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61547B50645602AC5C187FF0 /* PoseDetector.swift */; };
 		4DDB71DD94F988901BE8B23A /* SkeletonOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */; };
 		529F17F6DCAD5F0AF0F89175 /* pose_landmarker.task in Resources */ = {isa = PBXBuildFile; fileRef = BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */; };
@@ -39,7 +38,6 @@
 		77C24C462FDB073DCBB1D1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7837FCE13C69167A1394ABCE /* Pods-SwingSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.release.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.release.xcconfig"; sourceTree = "<group>"; };
 		89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonOverlay.swift; sourceTree = "<group>"; };
-		A2775E1511529BD4050F0534 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE64024919714AD918897DE0 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 		BCA171DB74FAF09495FA4A90 /* FeedbackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCardView.swift; sourceTree = "<group>"; };
 		BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */ = {isa = PBXFileReference; lastKnownFileType = file; path = pose_landmarker.task; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				12DD74347A3F363367E1D7C7 /* Assets.xcassets */,
 				77C24C462FDB073DCBB1D1C0 /* Info.plist */,
 				BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */,
-				A2775E1511529BD4050F0534 /* README.md */,
 				F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */,
 				1AB48A16E75FD667ABC6C1D0 /* Services */,
 				45FA64AF151134EB2BE6B695 /* Views */,
@@ -197,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22ED0D2B8038727174DBA15 /* Assets.xcassets in Resources */,
-				3C4C10B02F25739A09F2643A /* README.md in Resources */,
 				529F17F6DCAD5F0AF0F89175 /* pose_landmarker.task in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
