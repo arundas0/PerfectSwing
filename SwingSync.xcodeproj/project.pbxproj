@@ -9,16 +9,20 @@
 /* Begin PBXBuildFile section */
 		04A2D2DD506A157EE48D993A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA3995F9F7E041A8834DA4 /* CameraView.swift */; };
 		059670136824A20371923001 /* SwingSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */; };
+		29917183EF6E090C1698A4B7 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA171DB74FAF09495FA4A90 /* FeedbackCardView.swift */; };
+		3C4C10B02F25739A09F2643A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2775E1511529BD4050F0534 /* README.md */; };
 		48DFD99634A3CE1F8D80F52F /* PoseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61547B50645602AC5C187FF0 /* PoseDetector.swift */; };
 		4DDB71DD94F988901BE8B23A /* SkeletonOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */; };
 		529F17F6DCAD5F0AF0F89175 /* pose_landmarker.task in Resources */ = {isa = PBXBuildFile; fileRef = BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */; };
 		5F3EF3ABD22C9CB66793C126 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC631867AED78A9A59A1AA /* CameraService.swift */; };
 		62F7E663A6575EA398E4288A /* SwingSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5B745B4F1CE045001E8CD9 /* SwingSavedView.swift */; };
+		6EEEE7BCA8877F7804B1DD13 /* SwingAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98385E371FD8185F5CF751E /* SwingAnalyzer.swift */; };
 		8E8565BF16EFD5DFEE6EC5D5 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64024919714AD918897DE0 /* RingBuffer.swift */; };
-		8EF0A862E9493C7806F17522 /* Pods_SwingSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF18374E06D96FEFFFDB8F45 /* Pods_SwingSync.framework */; };
 		93AE831C10E1E42EC09C2BEF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046508B56856F8F093EA4AB3 /* SplashView.swift */; };
 		B22ED0D2B8038727174DBA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DD74347A3F363367E1D7C7 /* Assets.xcassets */; };
 		BED0204DF91BFA3D1B97D6A0 /* SwingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD2E77C400E25568173A27 /* SwingLogic.swift */; };
+		DDD2E56E298EB246D158A97F /* Pods_SwingSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83E22321EDFB89DC25DA8B5 /* Pods_SwingSync.framework */; };
+		F67B97169F46E7353A811D2C /* ReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B3259D216CE6D338A6A3F /* ReplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,35 +32,57 @@
 		12DD74347A3F363367E1D7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15AD2E77C400E25568173A27 /* SwingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingLogic.swift; sourceTree = "<group>"; };
 		1B4AD0FE5F39F71813C48093 /* SwingSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		267F5095B83BEBD586512BBC /* Pods-SwingSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.debug.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.debug.xcconfig"; sourceTree = "<group>"; };
+		2D1B3259D216CE6D338A6A3F /* ReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayView.swift; sourceTree = "<group>"; };
 		5BDA3995F9F7E041A8834DA4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		6087D786BE9A1DC4F729E140 /* Pods-SwingSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.debug.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.debug.xcconfig"; sourceTree = "<group>"; };
 		61547B50645602AC5C187FF0 /* PoseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetector.swift; sourceTree = "<group>"; };
-		70096078A478D8CE57CDD615 /* Pods-SwingSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.release.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.release.xcconfig"; sourceTree = "<group>"; };
 		77C24C462FDB073DCBB1D1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7837FCE13C69167A1394ABCE /* Pods-SwingSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingSync.release.xcconfig"; path = "Target Support Files/Pods-SwingSync/Pods-SwingSync.release.xcconfig"; sourceTree = "<group>"; };
 		89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonOverlay.swift; sourceTree = "<group>"; };
+		A2775E1511529BD4050F0534 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE64024919714AD918897DE0 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		BCA171DB74FAF09495FA4A90 /* FeedbackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCardView.swift; sourceTree = "<group>"; };
 		BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */ = {isa = PBXFileReference; lastKnownFileType = file; path = pose_landmarker.task; sourceTree = "<group>"; };
-		BF18374E06D96FEFFFDB8F45 /* Pods_SwingSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwingSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83E22321EDFB89DC25DA8B5 /* Pods_SwingSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwingSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingSyncApp.swift; sourceTree = "<group>"; };
+		F98385E371FD8185F5CF751E /* SwingAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F2DD4500593F3D32C3FA9993 /* Frameworks */ = {
+		0723CBDB5B21CA4877777DDE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EF0A862E9493C7806F17522 /* Pods_SwingSync.framework in Frameworks */,
+				DDD2E56E298EB246D158A97F /* Pods_SwingSync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09BE86385FA7FAD81427807C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F83E22321EDFB89DC25DA8B5 /* Pods_SwingSync.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09C74B0731F96322CC83CD92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				267F5095B83BEBD586512BBC /* Pods-SwingSync.debug.xcconfig */,
+				7837FCE13C69167A1394ABCE /* Pods-SwingSync.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1AB48A16E75FD667ABC6C1D0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				08CC631867AED78A9A59A1AA /* CameraService.swift */,
 				AE64024919714AD918897DE0 /* RingBuffer.swift */,
+				F98385E371FD8185F5CF751E /* SwingAnalyzer.swift */,
 				15AD2E77C400E25568173A27 /* SwingLogic.swift */,
 			);
 			path = Services;
@@ -82,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				5BDA3995F9F7E041A8834DA4 /* CameraView.swift */,
+				BCA171DB74FAF09495FA4A90 /* FeedbackCardView.swift */,
+				2D1B3259D216CE6D338A6A3F /* ReplayView.swift */,
 				89F0B0B64D2EED08C3700598 /* SkeletonOverlay.swift */,
 				046508B56856F8F093EA4AB3 /* SplashView.swift */,
 				0F5B745B4F1CE045001E8CD9 /* SwingSavedView.swift */,
@@ -89,31 +117,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		795DD278BFC8CABF5924E89B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF18374E06D96FEFFFDB8F45 /* Pods_SwingSync.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D8FC3C1A096460FA4473B246 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6087D786BE9A1DC4F729E140 /* Pods-SwingSync.debug.xcconfig */,
-				70096078A478D8CE57CDD615 /* Pods-SwingSync.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		E3BD9253C18FF219E555BAF6 = {
 			isa = PBXGroup;
 			children = (
 				E6F0536C354F9F720E5619FF /* SwingSync */,
 				2D6B2EE7A5D08DFD8396FB1C /* Products */,
-				D8FC3C1A096460FA4473B246 /* Pods */,
-				795DD278BFC8CABF5924E89B /* Frameworks */,
+				09C74B0731F96322CC83CD92 /* Pods */,
+				09BE86385FA7FAD81427807C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +133,7 @@
 				12DD74347A3F363367E1D7C7 /* Assets.xcassets */,
 				77C24C462FDB073DCBB1D1C0 /* Info.plist */,
 				BEDCE88AB7E458FCA22692FC /* pose_landmarker.task */,
+				A2775E1511529BD4050F0534 /* README.md */,
 				F8811E66F53D4D4C95590F5C /* SwingSyncApp.swift */,
 				1AB48A16E75FD667ABC6C1D0 /* Services */,
 				45FA64AF151134EB2BE6B695 /* Views */,
@@ -138,10 +149,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 055FB4CC2F8EB48705CED4FA /* Build configuration list for PBXNativeTarget "SwingSync" */;
 			buildPhases = (
-				E8624A5CFDB16A763A0AF916 /* [CP] Check Pods Manifest.lock */,
+				301B1EFF6446564BBE13ED90 /* [CP] Check Pods Manifest.lock */,
 				BB1F22D152DE69F2D62FA11C /* Sources */,
 				635BD00AA5B670B569D53AF9 /* Resources */,
-				F2DD4500593F3D32C3FA9993 /* Frameworks */,
+				0723CBDB5B21CA4877777DDE /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22ED0D2B8038727174DBA15 /* Assets.xcassets in Resources */,
+				3C4C10B02F25739A09F2643A /* README.md in Resources */,
 				529F17F6DCAD5F0AF0F89175 /* pose_landmarker.task in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,7 +205,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E8624A5CFDB16A763A0AF916 /* [CP] Check Pods Manifest.lock */ = {
+		301B1EFF6446564BBE13ED90 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,10 +236,13 @@
 			files = (
 				5F3EF3ABD22C9CB66793C126 /* CameraService.swift in Sources */,
 				04A2D2DD506A157EE48D993A /* CameraView.swift in Sources */,
+				29917183EF6E090C1698A4B7 /* FeedbackCardView.swift in Sources */,
 				48DFD99634A3CE1F8D80F52F /* PoseDetector.swift in Sources */,
+				F67B97169F46E7353A811D2C /* ReplayView.swift in Sources */,
 				8E8565BF16EFD5DFEE6EC5D5 /* RingBuffer.swift in Sources */,
 				4DDB71DD94F988901BE8B23A /* SkeletonOverlay.swift in Sources */,
 				93AE831C10E1E42EC09C2BEF /* SplashView.swift in Sources */,
+				6EEEE7BCA8877F7804B1DD13 /* SwingAnalyzer.swift in Sources */,
 				BED0204DF91BFA3D1B97D6A0 /* SwingLogic.swift in Sources */,
 				62F7E663A6575EA398E4288A /* SwingSavedView.swift in Sources */,
 				059670136824A20371923001 /* SwingSyncApp.swift in Sources */,
@@ -239,7 +254,7 @@
 /* Begin XCBuildConfiguration section */
 		34C74792E5289DA51767E00E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70096078A478D8CE57CDD615 /* Pods-SwingSync.release.xcconfig */;
+			baseConfigurationReference = 7837FCE13C69167A1394ABCE /* Pods-SwingSync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -258,7 +273,7 @@
 		};
 		C483BCBC354B6EA56901750F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6087D786BE9A1DC4F729E140 /* Pods-SwingSync.debug.xcconfig */;
+			baseConfigurationReference = 267F5095B83BEBD586512BBC /* Pods-SwingSync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

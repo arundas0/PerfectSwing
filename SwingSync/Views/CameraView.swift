@@ -10,8 +10,12 @@ struct CameraView: View {
     
     // Ring Buffer (not observed for View updates, but used)
     private let ringBuffer = RingBuffer()
+    private let swingAnalyzer = SwingAnalyzer()
     
     @State private var showingSaveSheet = false
+    @State private var showingReplay = false
+    @State private var showingFeedback = false
+    @State private var currentFeedback: SwingAnalyzer.SwingFeedback?
     @State private var savedVideoURL: URL?
     
     // Timer to force UI refresh
@@ -113,10 +117,33 @@ struct CameraView: View {
                     .background(Color.black.opacity(0.7))
                     .cornerRadius(8)
             }
+            
+            // Replay overlay
+            if showingReplay {
+                ReplayView(swingFrames: swingLogic.swingLandmarks) {
+                    // Replay complete - analyze and show feedback
+                    showingReplay = false
+                    currentFeedback = swingAnalyzer.analyze(frames: swingLogic.swingLandmarks)
+                    withAnimation {
+                        showingFeedback = true
+                    }
+                }
+                .transition(.opacity)
+            }
+            
+            // Feedback card overlay
+            if showingFeedback, let feedback = currentFeedback {
+                FeedbackCardView(feedback: feedback) {
+                    // Feedback dismissed - now save video
+                    showingFeedback = false
+                    saveSwing()
+                }
+            }
         }
         .fullScreenCover(isPresented: $showingSaveSheet) {
             SwingSavedView(videoURL: savedVideoURL) {
                 showingSaveSheet = false
+                swingLogic.resetToIdle()
             }
         }
         .onAppear {
@@ -130,8 +157,10 @@ struct CameraView: View {
             }
             
             swingLogic.onVisualSwingDetected = {
-                print("🎬 SWING DETECTED - Triggering save...")
-                saveSwing()
+                print("🎬 SWING DETECTED - Starting replay...")
+                withAnimation {
+                    showingReplay = true
+                }
             }
             
             cameraService.start()

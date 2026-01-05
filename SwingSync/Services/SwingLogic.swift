@@ -40,6 +40,14 @@ class SwingLogic: ObservableObject {
     private let windowSize = 15 // Increased window for better averaging
     
     @Published var debugInfo: String = ""
+    
+    // Swing landmark storage for replay
+    struct SwingFrame {
+        let timestamp: TimeInterval
+        let landmarks: [NormalizedLandmark]
+    }
+    @Published private(set) var swingLandmarks: [SwingFrame] = []
+    private var swingStartTime: TimeInterval = 0
 
     func process(landmarks: [NormalizedLandmark]) {
         processCount += 1
@@ -161,6 +169,10 @@ class SwingLogic: ObservableObject {
             // Detect backswing start - wrist rises (y decreases in screen coords, but MediaPipe has 0 at top)
             // Actually for front-facing camera with mirroring, need to check wrist movement
             if (baselineWristY - avgWristY) > backswingTrigger { 
+                // Start recording swing landmarks
+                swingStartTime = Date().timeIntervalSince1970
+                swingLandmarks.removeAll()
+                
                 transition(to: .backswing)
                 
                 // Timeout safety - if stuck in backswing/downswing, auto-complete
@@ -168,15 +180,16 @@ class SwingLogic: ObservableObject {
                     if self?.state == .backswing || self?.state == .downswing {
                         self?.transition(to: .finish)
                         self?.onVisualSwingDetected?()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            self?.transition(to: .idle)
-                        }
                     }
                 }
             }
             
         case .backswing:
             DispatchQueue.main.async { self.statusMessage = "Backswing..." }
+            // Store landmarks for replay
+            let frame = SwingFrame(timestamp: Date().timeIntervalSince1970 - swingStartTime, landmarks: landmarks)
+            swingLandmarks.append(frame)
+            
             // Detect transition to downswing - wrist starts coming back down
             if avgWristY > (baselineWristY - 0.10) { 
                 transition(to: .downswing)
@@ -184,15 +197,19 @@ class SwingLogic: ObservableObject {
             
         case .downswing:
             DispatchQueue.main.async { self.statusMessage = "Downswing!" }
+            // Store landmarks for replay
+            let frame = SwingFrame(timestamp: Date().timeIntervalSince1970 - swingStartTime, landmarks: landmarks)
+            swingLandmarks.append(frame)
+            
             // Detect finish - wrist returns near baseline or steadies
             if avgWristY > (baselineWristY - 0.03) || isSteady {
+                // Store final frame
+                let finalFrame = SwingFrame(timestamp: Date().timeIntervalSince1970 - swingStartTime, landmarks: landmarks)
+                swingLandmarks.append(finalFrame)
+                
                 transition(to: .finish)
                 onVisualSwingDetected?()
-                
-                // Auto-reset after finish
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-                    self?.transition(to: .idle)
-                }
+                // Note: Don't auto-reset - ReplayView will handle this
             }
             
         case .impact:
@@ -252,5 +269,11 @@ class SwingLogic: ObservableObject {
             }
             print("\(emoji) SWING STAGE: \(oldState) → \(newState)")
         }
+    }
+    
+    /// Called by ReplayView after replay completes to reset for next swing
+    func resetToIdle() {
+        swingLandmarks.removeAll()
+        transition(to: .idle)
     }
 }
